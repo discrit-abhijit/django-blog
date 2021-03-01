@@ -8,20 +8,16 @@
             <h1><a href="/">Discrit's Django Blog</a></h1>
         </header>
 
-        <article>
-            <time>published: 24.02.2021, 12:14</time>
-            <h2><a href="">My first post</a></h2>
-            <p>Welcome to the Django Tutorial! We are happy to see you here. :) In this tutorial, we will take you on a journey under the hood of web technologies, offering you a glimpse of all the bits and pieces that need to come together to make the web work as we know it.
+        {% for post in posts %}
+        	<article>
+        		
+        		<h2><a href=""> {{post.title}} </a></h2>
+        		<time>published: {{post.created_date}} </time>
+        		<p> {{post.text|linebreaksbr}} </p>
+        	
+        	</article>
+        {% endfor %}
 
-            As with all unknown things, this is going to be an adventure - but no worries, since you already worked up the courage to be here, you'll be just fine. :)</p>
-        </article>
 
-        <article>
-            <time>published: 25.02.2021, 12:14</time>
-            <h2><a href="">My second post</a></h2>
-            <p>Have you ever felt that the world is more and more about technology to which you cannot (yet) relate? Have you ever wondered how to create a website but have never had enough motivation to start? Have you ever thought that the software world is too complicated for you to even try doing something on your own?
-
-            Well, we have good news for you! Programming is not as hard as it seems and we want to show you how fun it can be..</p>
-        </article>
     </body>
 </html>
